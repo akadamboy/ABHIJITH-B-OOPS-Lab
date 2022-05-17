@@ -3,13 +3,13 @@ public class employee
 {
 int eNo;
 String name;
-float Salary;
+float salary;
 
 public void getInput()
 {
 	Scanner in =  new Scanner(System.in);
 	System.out.println("Enter the employee id:");
-	empid = in.nextInt();
+	eNo = in.nextInt();
 	System.out.println("Enter the employee name:");
 	name = in.next();
 	System.out.println("Enter the salary:");
@@ -18,26 +18,32 @@ public void getInput()
 
 public void display()
 {
-System.out.println("Enter the employee id:");
-System.out.println("Enter the employee name:");
-System.out.println("Enter the employee salary:");
+System.out.println("Employee id:"+eNo);
+System.out.println("Employee name:"+name);
+System.out.println("Salary:"+salary);
 }
 
 public static void main(String[] args)
 {
-employee e[]= new employee[5];
-
-for (int i=0;i<5;i++)
+System.out.println("Enter the number of employees:");
+Scanner in =  new Scanner(System.in);
+int n = in.nextInt();
+employee e[]= new employee[n];
+for (int i=0;i<n;i++)
 {
-	e[i] = new Employee();
+	e[i] = new employee();
 	e[i].getInput();
 }
 
-for(int i=0;i<5;i++)
+for(int i=0;i<n;i++)
 {
+int j=i+1;
+System.out.println("\nEmployee No:"+j);
+System.out.println("*************");
 e[i].display();
 }
 }
 
 }
+
 
